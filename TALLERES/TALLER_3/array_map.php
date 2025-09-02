@@ -61,4 +61,18 @@ function aplicarOperaciones($array, $operaciones) {
 }
 
 $valores = [1, 2, 3, 4, 5];
-$operac
+$operaciones = [
+    function($n) { return $n * 2; },
+    function($n) { return $n * $n; },
+    function($n) { return $n + 10; },
+    function($n) { return $n / 2; },
+    function($n) { return $n % 3; }
+];
+
+$resultados = aplicarOperaciones($valores, $operaciones);
+
+echo "</br>Resultados de operaciones personalizadas:</br>";
+foreach ($valores as $index => $valor) {
+    echo "Valor original: $valor, Resultado: {$resultados[$index]}</br>";
+}
+?>
