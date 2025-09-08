@@ -25,9 +25,7 @@ echo "</table>";
 ?>
 
 
-git add analisis_texto.php
-git commit -m "Estoy agregando el archivo principal de análisis de texto con tabla HTML"
-git push origin main
+
 
 
 
