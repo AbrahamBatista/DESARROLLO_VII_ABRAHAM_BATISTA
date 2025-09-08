@@ -1,5 +1,5 @@
 <?php
-// utilidades_texto.php
+
 
 // Función 1: contar_palabras
 function contar_palabras($texto) {
