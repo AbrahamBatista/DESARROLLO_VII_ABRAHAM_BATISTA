@@ -10,7 +10,7 @@ $frases = [
 ];
 
 echo "<table border='1' cellpadding='5'>";
-echo "<tr><th>Frase</th><th>Número de palabras</th><th>Número de vocales</th><th>Palabras invertidas</th></tr>";
+echo "<tr><th>Frase</th><th>Numero de palabras</th><th>Numero de vocales</th><th>Palabras invertidas</th></tr>";
 
 foreach ($frases as $frase) {
     echo "<tr>";
@@ -23,6 +23,7 @@ foreach ($frases as $frase) {
 
 echo "</table>";
 ?>
+
 
 
 
