@@ -26,6 +26,3 @@ function calcular_total($subtotal, $descuento, $impuesto) {
 ?>
 
 
-git add funciones_tienda.php
-git commit -m "Estoy agregando las funciones de calculo de descuentos, impuestos y total"
-git push origin main
