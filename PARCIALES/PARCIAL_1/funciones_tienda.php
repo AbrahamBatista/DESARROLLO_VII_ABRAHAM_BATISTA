@@ -3,13 +3,20 @@
 
 // Funcion 1: calcular_descuento
 function calcular_descuento($total_compra) {
-    if ($total_compra < 100) {
+    if ($total_compra < 100) 
+        {
         return 0;
-    } elseif ($total_compra <= 500) {
+    } 
+    elseif ($total_compra <= 500) 
+        {
         return $total_compra * 0.05;
-    } elseif ($total_compra <= 1000) {
+    } 
+    elseif ($total_compra <= 1000) 
+    {
         return $total_compra * 0.10;
-    } else {
+    } 
+    else 
+    {
         return $total_compra * 0.15;
     }
 }
