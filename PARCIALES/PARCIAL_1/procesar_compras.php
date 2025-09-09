@@ -99,7 +99,7 @@ $total = calcular_total($subtotal, $descuento, $impuesto);
 
 
 
-git add procesar_compras.php
-git commit -m "Estoy agregando el archivo principal para procesar compras con resumen en HTML"
-git push origin main
-          
+
+        
+
+
