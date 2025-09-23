@@ -1,6 +1,7 @@
 <?php
+//PASO2
 $inventario = [
-    "laptop" => ["cantidad" => 50, "precio" => 800],
+    "laptop" => ["cantidad" =>  50, "precio" => 800],
     "smartphone" => ["cantidad" => 100, "precio" => 500],
     "tablet" => ["cantidad" => 30, "precio" => 300],
     "smartwatch" => ["cantidad" => 25, "precio" => 150]
@@ -47,7 +48,7 @@ function productoMayorValor($inv) {
 echo "Inventario inicial:\n";
 mostrarInventario($inventario);
 
-actualizarInventario($inventario, "laptop", -5);
+actualizarInventario($inventario, "laptop", -6);
 actualizarInventario($inventario, "smartphone", 50, 450);
 actualizarInventario($inventario, "auriculares", 100, 50);
 
@@ -58,4 +59,5 @@ echo "\nValor total del inventario: $" . valorTotalInventario($inventario) . "\n
 
 $mayor = productoMayorValor($inventario);
 echo "\nProducto con mayor valor en inventario: {$mayor['producto']} (\${$mayor['valor']})\n";
+
 ?>
