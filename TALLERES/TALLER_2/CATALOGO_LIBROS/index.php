@@ -1,6 +1,7 @@
 <?php
 require_once 'includes/funciones.php';
 include 'includes/encabezado.php';
+///prueba
 
 // Obtener la lista de libros
 $libros = obtenerLibros();
