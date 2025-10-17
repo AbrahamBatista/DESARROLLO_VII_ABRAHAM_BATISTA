@@ -28,4 +28,9 @@ function sanitizarIntereses($intereses) {
 function sanitizarComentarios($comentarios) {
     return htmlspecialchars(trim($comentarios), ENT_QUOTES, 'UTF-8');
 }
+function sanitizarFechaNacimiento($fecha) {
+    return filter_var(trim($fecha), FILTER_SANITIZE_STRING);
+}
+
+
 ?>

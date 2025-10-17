@@ -28,6 +28,17 @@ function validarIntereses($intereses) {
 function validarComentarios($comentarios) {
     return strlen($comentarios) <= 500;
 }
+function validarFechaNacimiento($fecha) {
+    $timestamp = strtotime($fecha);
+    if ($timestamp === false) return false;
+
+    $fechaNacimiento = new DateTime($fecha);
+    $hoy = new DateTime();
+    $edad = $hoy->diff($fechaNacimiento)->y;
+
+    return $edad >= 18 && $edad <= 120;
+}
+
 
 function validarFotoPerfil($archivo) {
     $tiposPermitidos = ['image/jpeg', 'image/png', 'image/gif'];
