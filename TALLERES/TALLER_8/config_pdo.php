@@ -1,6 +1,7 @@
 <?php
+// === CONFIGURACIÓN PDO ===
 define('DB_SERVIDOR', 'localhost');
-define('DB_PUERTO', 3306);
+define('DB_PUERTO', 3308);
 define('DB_USUARIO', 'root');
 define('DB_CONTRASENA', '12345');
 define('DB_NOMBRE', 'taller8_db');
