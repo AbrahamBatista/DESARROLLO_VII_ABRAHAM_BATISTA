@@ -1,14 +1,15 @@
 <?php
-// === CONFIGURACIONYSQLI ===
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');         // usuario por defecto de Laragon
-define('DB_PASSWORD', '');             // contraseña VACIA
-define('DB_NAME', 'taller8_db');
+// === CONFIGURACIÓN MYSQLI ===
+define('DB_SERVIDOR', 'localhost');
+define('DB_PUERTO', 3308);             
+define('DB_USUARIO', 'root');
+define('DB_CONTRASENA', '12345');
+define('DB_NOMBRE', 'taller8_db');
 
-// Creando la conexion 
-$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+// Creando la coonexion 
+$conn = mysqli_connect(DB_SERVIDOR, DB_USUARIO, DB_CONTRASENA, DB_NOMBRE, DB_PUERTO);
 
-// Verificar conexion
+// Verificar conexion 
 if ($conn === false) {
     die("ERROR: No se pudo conectar. " . mysqli_connect_error());
 }
