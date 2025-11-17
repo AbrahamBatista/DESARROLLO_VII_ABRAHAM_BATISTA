@@ -6,7 +6,7 @@ $usuarios = [
     "maria77"   => ["password" => "clave456", "rol" => "Estudiante"],
 ];
 
-// Calificaciones solo para estudiantes
+// Calificaciones estudiantes
 $calificaciones = [
     "fajardo23" => 88,
     "waterman77" => 95,
