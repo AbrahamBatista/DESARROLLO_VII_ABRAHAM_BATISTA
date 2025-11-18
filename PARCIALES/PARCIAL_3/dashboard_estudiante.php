@@ -20,10 +20,10 @@ $nota = $calificaciones[$usuario] ?? "Sin nota registrada";
 <body>
 
 <h2>Bienvenido Estudiante: <?php echo $usuario; ?></h2>
-<p>Tu calificación es: <strong><?php echo $nota; ?></strong></p>
+<p>Tu calificacion es: <strong><?php echo $nota; ?></strong></p>
 
 <br>
-<a href="logout.php">Cerrar sesión</a>
+<a href="logout.php">Cerrar sesion</a>
 
 </body>
 </html>

@@ -35,7 +35,7 @@ foreach ($calificaciones as $est => $nota) {
 </table>
 
 <br>
-<a href="logout.php">Cerrar sesión</a>
+<a href="logout.php">Cerrar sesion</a>
 
 </body>
 </html>
