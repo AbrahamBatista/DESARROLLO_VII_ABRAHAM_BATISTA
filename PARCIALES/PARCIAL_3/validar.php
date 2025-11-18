@@ -12,7 +12,7 @@ if ($usuario === "" || $password === "") {
 }
 
 if (!preg_match('/^[a-zA-Z0-9]{3,}$/', $usuario)) {
-    header("Location: index.php?error=Usuario inválido (mín 3 caracteres, solo letras y números).");
+    header("Location: index.php?error=Usuario invalido (mín 3 caracteres, solo letras y numeros).");
     exit;
 }
 
