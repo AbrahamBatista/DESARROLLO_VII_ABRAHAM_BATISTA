@@ -16,7 +16,7 @@ if (!isset($_SESSION["usuario"]) || $_SESSION["rol"] !== "Profesor") {
 </head>
 <body>
 
-<h2>Bienvenido Profesor: <?php echo $_SESSION["usuario"]; ?></h2>
+<h2>Bienvenido Profe: <?php echo $_SESSION["usuario"]; ?></h2>
 
 <h3>Calificaciones de estudiantes</h3>
 
