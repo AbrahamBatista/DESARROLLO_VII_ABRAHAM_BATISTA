@@ -14,14 +14,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($nombre !== "" && $precio >= 0) {
         $stmt = $conn->prepare("INSERT INTO habitaciones (nombre, descripcion, capacidad, precio) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssId", $nombre, $descripcion, $capacidad, $precio);
+        $stmt->bind_param("ssid", $nombre, $descripcion, $capacidad, $precio);
         $stmt->execute();
     }
 }
 
 if (isset($_GET['eliminar'])) {
     $id = (int)$_GET['eliminar'];
-    $conn->query("DELETE FROM habitaciones WHERE id = $id");
+    if ($id > 0) {
+        $conn->query("DELETE FROM habitaciones WHERE id = $id");
+    }
+    header("Location: habitaciones.php");
+    exit;
 }
 
 $habitaciones = $conn->query("SELECT * FROM habitaciones ORDER BY id DESC");
@@ -84,7 +88,7 @@ $habitaciones = $conn->query("SELECT * FROM habitaciones ORDER BY id DESC");
             <td>$<?= $h['precio'] ?></td>
             <td>
                 <a href="habitaciones.php?eliminar=<?= $h['id'] ?>" class="btn btn-sm btn-danger"
-                   onclick="return confirm('¿Eliminar habitación?')">Eliminar</a>
+                   onclick="return confirm('¿Eliminar habitación?');">Eliminar</a>
             </td>
         </tr>
         <?php endwhile; ?>
