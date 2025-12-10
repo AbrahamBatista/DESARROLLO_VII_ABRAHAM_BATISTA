@@ -6,6 +6,8 @@ $entrada = $_POST['entrada'] ?? "";
 $salida = $_POST['salida'] ?? "";
 $cliente = trim($_POST['cliente'] ?? "");
 $servicios = $_POST['servicios'] ?? [];
+$correo = $_POST['correo'] ?? "";
+
 
 if ($id == "" || $entrada == "" || $salida == "" || $cliente == "") {
     header("Location: index.php");
@@ -49,7 +51,7 @@ foreach ($servicios as $sid) {
 </nav>
 
 <div class="container">
-    <h3 class="mb-3">Paso 2: Datos de pago</h3>
+    <h3 class="mb-3">Verificar reserva</h3>
 
     <div class="card mb-3">
         <div class="card-header">Resumen de la reserva</div>
@@ -66,18 +68,20 @@ foreach ($servicios as $sid) {
                 }
                 ?>
             </p>
+            <p><strong>Correo al que se enviara la informacion de reserva:</strong> <?= htmlspecialchars($correo) ?></p>            
             <h4>Total a pagar: $<?= number_format($total, 2, '.', '') ?></h4>
         </div>
     </div>
-
+     <h3 class="mb-3">Completar datos para preceder al pago</h3>
     <form method="POST" action="confirmar.php" class="card">
-        <div class="card-header">Formulario de pago (simulado)</div>
+        <div class="card-header">Ingreso de Tarjeta VISA / MASTER CARD</div>
         <div class="card-body">
 
             <input type="hidden" name="id" value="<?= $id_int ?>">
             <input type="hidden" name="entrada" value="<?= htmlspecialchars($entrada) ?>">
             <input type="hidden" name="salida" value="<?= htmlspecialchars($salida) ?>">
             <input type="hidden" name="cliente" value="<?= htmlspecialchars($cliente) ?>">
+            <input type="hidden" name="correo" value="<?= htmlspecialchars($_POST['correo']) ?>">
 
             <?php foreach($servicios as $sid): ?>
                 <input type="hidden" name="servicios[]" value="<?= (int)$sid ?>">

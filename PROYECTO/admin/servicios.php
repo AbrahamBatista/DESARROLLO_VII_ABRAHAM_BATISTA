@@ -20,12 +20,12 @@ if (isset($_GET['eliminar'])) {
     $id = (int)$_GET['eliminar'];
 
     if ($id > 0) {
-        // Primero eliminamos las referencias en reserva_servicios
+  
         $stmtRel = $conn->prepare("DELETE FROM reserva_servicios WHERE servicio_id = ?");
         $stmtRel->bind_param("i", $id);
         $stmtRel->execute();
 
-        // Luego eliminamos el servicio
+       
         $stmtServ = $conn->prepare("DELETE FROM servicios WHERE id = ?");
         $stmtServ->bind_param("i", $id);
         $stmtServ->execute();

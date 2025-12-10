@@ -47,9 +47,15 @@ $servicios = $conn->query("SELECT * FROM servicios");
             <input type="hidden" name="salida" value="<?= htmlspecialchars($salida) ?>">
 
             <div class="mb-3">
-                <label class="form-label">Nombre del cliente</label>
+                <label class="form-label">Ingrese su nombre</label>
                 <input type="text" name="cliente" class="form-control" required>
             </div>
+
+            <div class="mb-3">
+                <label class="form-label">Ingrese su correo de contacto</label>
+                <input type="email" name="correo" class="form-control" required>
+            </div>
+
 
             <div class="mb-3">
                 <label class="form-label">Servicios adicionales</label><br>

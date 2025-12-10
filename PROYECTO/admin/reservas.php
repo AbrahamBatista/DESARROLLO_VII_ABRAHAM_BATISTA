@@ -51,6 +51,7 @@ $reservas = $conn->query($sql);
             <th>ID</th>
             <th>Habitación</th>
             <th>Cliente</th>
+            <th>Correo</th>
             <th>Entrada</th>
             <th>Salida</th>
             <th>Total</th>
@@ -80,6 +81,7 @@ $reservas = $conn->query($sql);
             <td><?= $r['id'] ?></td>
             <td><?= htmlspecialchars($r['habitacion']) ?></td>
             <td><?= htmlspecialchars($r['nombre_cliente']) ?></td>
+            <td><?= htmlspecialchars($r['email_cliente']) ?></td>
             <td><?= $r['fecha_entrada'] ?></td>
             <td><?= $r['fecha_salida'] ?></td>
             <td>$<?= $r['total'] ?></td>

@@ -6,6 +6,8 @@ $entrada = $_POST['entrada'] ?? "";
 $salida = $_POST['salida'] ?? "";
 $cliente = trim($_POST['cliente'] ?? "");
 $servicios = $_POST['servicios'] ?? [];
+$correo = trim($_POST['correo'] ?? "");
+
 
 $nombre_tarjeta = $_POST['nombre_tarjeta'] ?? "";
 $numero_tarjeta = $_POST['numero_tarjeta'] ?? "";
@@ -37,8 +39,10 @@ foreach ($servicios as $sid) {
     }
 }
 
-$stmt = $conn->prepare("INSERT INTO reservas (habitacion_id, nombre_cliente, fecha_entrada, fecha_salida, total, estado) VALUES (?, ?, ?, ?, ?, 'Confirmada')");
-$stmt->bind_param("isssd", $id_int, $cliente, $entrada, $salida, $total);
+$stmt = $conn->prepare("INSERT INTO reservas (habitacion_id, nombre_cliente, email_cliente, fecha_entrada, fecha_salida, total, estado)
+                        VALUES (?, ?, ?, ?, ?, ?, 'Confirmada')");
+$stmt->bind_param("issssd", $id_int, $cliente, $correo, $entrada, $salida, $total);
+
 $stmt->execute();
 
 $idReserva = $stmt->insert_id;
@@ -71,8 +75,8 @@ foreach ($servicios as $sid) {
 
         <div class="card-body">
             <p><strong>Cliente:</strong> <?= htmlspecialchars($cliente) ?></p>
+            <p><strong>Correo al que se envio la informacion de la reserva:</strong> <?= htmlspecialchars($correo) ?></p>
             <p><strong>Habitación:</strong> <?= htmlspecialchars($habitacion['nombre']) ?></p>
-
             <p><strong>Fecha de entrada:</strong> <?= htmlspecialchars($entrada) ?></p>
             <p><strong>Fecha de salida:</strong> <?= htmlspecialchars($salida) ?></p>
             <p><strong>Noches:</strong> <?= $diferencia ?></p>
