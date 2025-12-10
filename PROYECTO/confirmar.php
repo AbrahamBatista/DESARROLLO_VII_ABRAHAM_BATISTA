@@ -50,17 +50,17 @@ foreach ($servicios as $sid) {
 <body class="bg-light">
 <nav class="navbar navbar-dark bg-dark mb-4">
   <div class="container">
-    <a class="navbar-brand" href="index.php">Hotel - Reservas</a>
+    <a class="navbar-brand" href="index.php">Hotel El Monumental - Confirmacion de Reservas</a>
   </div>
 </nav>
 
 <div class="container">
     <div class="alert alert-success">
-        <h4 class="alert-heading">Reserva confirmada</h4>
-        <p>La reserva ha sido registrada como <strong>Pagado</strong> (simulación de pago).</p>
+        <h4 class="alert-heading">Su Reserva esta confirmada</h4>
+        <p> <strong>La reserva ha sido registrada.</strong> </p>
         <hr>
         <p><strong>Cliente:</strong> <?= htmlspecialchars($cliente) ?></p>
-        <p><strong>Total a pagar:</strong> $<?= number_format($total, 2, '.', '') ?></p>
+        <p><strong>Total pagado:</strong> $<?= number_format($total, 2, '.', '') ?></p>
     </div>
     <a href="index.php" class="btn btn-primary">Volver al inicio</a>
 </div>

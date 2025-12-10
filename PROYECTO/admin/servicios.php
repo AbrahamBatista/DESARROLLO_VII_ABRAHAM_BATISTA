@@ -18,7 +18,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 if (isset($_GET['eliminar'])) {
     $id = (int)$_GET['eliminar'];
-    $conn->query("DELETE FROM servicios WHERE id = $id");
+
+    if ($id > 0) {
+        // Primero eliminamos las referencias en reserva_servicios
+        $stmtRel = $conn->prepare("DELETE FROM reserva_servicios WHERE servicio_id = ?");
+        $stmtRel->bind_param("i", $id);
+        $stmtRel->execute();
+
+        // Luego eliminamos el servicio
+        $stmtServ = $conn->prepare("DELETE FROM servicios WHERE id = ?");
+        $stmtServ->bind_param("i", $id);
+        $stmtServ->execute();
+    }
+
+    header("Location: servicios.php");
+    exit;
 }
 
 $servicios = $conn->query("SELECT * FROM servicios ORDER BY id DESC");
@@ -71,8 +85,11 @@ $servicios = $conn->query("SELECT * FROM servicios ORDER BY id DESC");
             <td><?= htmlspecialchars($s['nombre']) ?></td>
             <td>$<?= $s['precio'] ?></td>
             <td>
-                <a href="servicios.php?eliminar=<?= $s['id'] ?>" class="btn btn-sm btn-danger"
-                   onclick="return confirm('¿Eliminar servicio?')">Eliminar</a>
+                <a href="servicios.php?eliminar=<?= $s['id'] ?>"
+                   class="btn btn-sm btn-danger"
+                   onclick="return confirm('¿Eliminar este servicio y quitarlo de las reservas relacionadas?');">
+                   Eliminar
+                </a>
             </td>
         </tr>
         <?php endwhile; ?>

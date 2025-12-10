@@ -5,17 +5,38 @@
     <meta charset="UTF-8">
     <title>Sistema de Reservas de Hotel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url('lindo-tropical.jpg'); /* Ruta de tu imagen */
+            background-size: cover;               /* La imagen cubre toda la pantalla */
+            background-position: center;          /* Centrada */
+            background-repeat: no-repeat;         /* No repetir */
+            background-attachment: fixed;         /* Efecto de fondo fijo */
+        }
+        h3{
+            color: white;
+            text-shadow: 2px 2px 5px black;
+        }
+        /* Hacer la tarjeta más legible sobre la imagen */
+        .card {
+            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, 0.75);
+        }
+    </style>
 </head>
-<body class="bg-light">
+
+<body>
 <nav class="navbar navbar-dark bg-dark mb-4">
   <div class="container">
-    <a class="navbar-brand" href="index.php">Hotel - Reservas</a>
+    <a class="navbar-brand" href="index.php">Hotel El Monumental - Reservas</a>
     <a class="btn btn-outline-light btn-sm" href="admin/login.php">Panel Admin</a>
   </div>
 </nav>
 
 <div class="container">
-    <h3 class="mb-3">Búsqueda de habitaciones por fechas</h3>
+    <h3 class="mb-3 text-light">Búsqueda de habitaciones por fechas</h3>
+
     <div class="card">
         <div class="card-body">
             <form method="GET" action="buscar.php" class="row g-3">
@@ -38,5 +59,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

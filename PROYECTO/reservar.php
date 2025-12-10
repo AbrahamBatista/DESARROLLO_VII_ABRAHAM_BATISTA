@@ -24,7 +24,7 @@ $servicios = $conn->query("SELECT * FROM servicios");
 <body class="bg-light">
 <nav class="navbar navbar-dark bg-dark mb-4">
   <div class="container">
-    <a class="navbar-brand" href="index.php">Hotel - Reservas</a>
+    <a class="navbar-brand" href="index.php">Hotel El Monumental - Reservas</a>
   </div>
 </nav>
 
