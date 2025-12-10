@@ -37,24 +37,24 @@ $resultado = $conn->query($sql);
 
     <style>
         body {
-            background-image: url('habitacion.jpg'); 
+            background-image: url('habi.jpg'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
         
-        /* Opcional: darle un poco de fondo a los títulos para más visibilidad */
+        
         h3, p {
             color: white;
             text-shadow: 2px 2px 5px black;
         }
 
     .detalle-habitacion {
-        color: #2c3e50;        /* Color de texto */
-        font-weight: 600;      /* Semi-negrita */
-        font-size: 15px;       /* Tamaño */
-        text-shadow: none;     /* Sin sombra para más claridad */
+        color: #2c3e50;        
+        font-weight: 600;      
+        font-size: 15px;       
+        text-shadow: none;     
     }
 
     </style>
@@ -64,7 +64,7 @@ $resultado = $conn->query($sql);
 
 <nav class="navbar navbar-dark bg-dark mb-4">
   <div class="container">
-    <a class="navbar-brand" href="index.php">Hotel El Monumental - Buscar Reservas Disponibles</a>
+    <a class="navbar-brand" href="index.php">Hotel El Monumental - Reservas Disponibles</a>
   </div>
 </nav>
 

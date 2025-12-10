@@ -8,17 +8,17 @@
 
     <style>
         body {
-            background-image: url('lindo-tropical.jpg'); /* Ruta de tu imagen */
-            background-size: cover;               /* La imagen cubre toda la pantalla */
-            background-position: center;          /* Centrada */
-            background-repeat: no-repeat;         /* No repetir */
-            background-attachment: fixed;         /* Efecto de fondo fijo */
+            background-image: url('fondo.jpg'); 
+            background-size: cover;               
+            background-position: center;          
+            background-repeat: no-repeat;         
+            background-attachment: fixed;         
         }
         h3{
             color: white;
             text-shadow: 2px 2px 5px black;
         }
-        /* Hacer la tarjeta más legible sobre la imagen */
+       
         .card {
             backdrop-filter: blur(5px);
             background-color: rgba(255, 255, 255, 0.75);

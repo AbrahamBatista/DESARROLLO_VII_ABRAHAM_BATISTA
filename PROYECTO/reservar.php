@@ -24,7 +24,7 @@ $servicios = $conn->query("SELECT * FROM servicios");
 <body class="bg-light">
 <nav class="navbar navbar-dark bg-dark mb-4">
   <div class="container">
-    <a class="navbar-brand" href="index.php">Hotel El Monumental - Reservas</a>
+    <a class="navbar-brand" href="index.php">Hotel - Reservas</a>
   </div>
 </nav>
 
@@ -40,7 +40,7 @@ $servicios = $conn->query("SELECT * FROM servicios");
         </div>
     </div>
 
-    <form method="POST" action="confirmar.php" class="card">
+    <form method="POST" action="pago.php" class="card">
         <div class="card-body">
             <input type="hidden" name="id" value="<?= $id_int ?>">
             <input type="hidden" name="entrada" value="<?= htmlspecialchars($entrada) ?>">
@@ -64,7 +64,7 @@ $servicios = $conn->query("SELECT * FROM servicios");
                 <?php endwhile; ?>
             </div>
 
-            <button class="btn btn-primary">Confirmar reserva y pago</button>
+            <button class="btn btn-primary">Continuar al pago</button>
             <a href="index.php" class="btn btn-secondary">Cancelar</a>
         </div>
     </form>
