@@ -44,19 +44,23 @@ $resultado = $conn->query($sql);
             background-attachment: fixed;
         }
         
-        
         h3, p {
             color: white;
             text-shadow: 2px 2px 5px black;
         }
 
-    .detalle-habitacion {
-        color: #2c3e50;        
-        font-weight: 600;      
-        font-size: 15px;       
-        text-shadow: none;     
-    }
+        .detalle-habitacion {
+            color: #2c3e50;        
+            font-weight: 600;      
+            font-size: 15px;       
+            text-shadow: none;     
+        }
 
+        
+        .card-img-top {
+            height: 180px;       
+            object-fit: cover;    
+        }
     </style>
 
 </head>
@@ -82,6 +86,14 @@ $resultado = $conn->query($sql);
             <?php while($h = $resultado->fetch_assoc()): ?>
                 <div class="col-md-4">
                     <div class="card mb-3">
+
+                   
+                        <img 
+                            src="habitacion_<?= $h['id'] ?>.jpg" 
+                            class="card-img-top" 
+                            alt="Imagen de <?= htmlspecialchars($h['nombre']) ?>"
+                        >
+
                         <div class="card-body">
                             <h5 class="card-title"><?= htmlspecialchars($h['nombre']) ?></h5>
                             <p class="card-text detalle-habitacion"><?= nl2br(htmlspecialchars($h['descripcion'])) ?></p>
