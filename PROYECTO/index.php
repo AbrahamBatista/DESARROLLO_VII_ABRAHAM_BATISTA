@@ -49,7 +49,7 @@
                     <input type="date" name="salida" class="form-control" required>
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label">Cantidad de personas</label>
+                    <label class="form-label">Numero de huespedes</label>
                     <input type="number" name="personas" class="form-control" min="1" required>
                 </div>
                 <div class="col-12">
