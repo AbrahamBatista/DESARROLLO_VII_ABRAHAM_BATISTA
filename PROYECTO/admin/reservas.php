@@ -23,10 +23,11 @@ if (isset($_GET['eliminar'])) {
     exit;
 }
 
-$sql = "SELECT r.*, h.nombre AS habitacion
-        FROM reservas r
-        JOIN habitaciones h ON r.habitacion_id = h.id
-        ORDER BY r.id DESC";
+$sql = "SELECT reservas.*, habitaciones.nombre AS habitacion
+        FROM reservas
+        JOIN habitaciones ON reservas.habitacion_id = habitaciones.id
+        ORDER BY reservas.id DESC;";
+        
 $reservas = $conn->query($sql);
 ?>
 <!DOCTYPE html>
@@ -64,10 +65,12 @@ $reservas = $conn->query($sql);
             $idReserva = (int)$r['id'];
             $serviciosTxt = "Sin servicios";
 
-            $sqlServ = "SELECT s.nombre 
-                        FROM reserva_servicios rs
-                        JOIN servicios s ON rs.servicio_id = s.id
-                        WHERE rs.reserva_id = $idReserva";
+            $sqlServ = "SELECT servicios.nombre
+                        FROM reserva_servicios
+                        JOIN servicios ON reserva_servicios.servicio_id = servicios.id
+                        WHERE reserva_servicios.reserva_id = $idReserva;";
+
+                        
             $resServ = $conn->query($sqlServ);
             if ($resServ && $resServ->num_rows > 0) {
                 $nombres = [];

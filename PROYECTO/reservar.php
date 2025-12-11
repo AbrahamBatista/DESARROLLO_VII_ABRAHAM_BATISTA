@@ -40,15 +40,12 @@ $servicios = $conn->query("SELECT * FROM servicios");
                 <div class="card-body">
 
                 <div class="row align-items-center">
-
-                <!-- Imagen -->
                 <div class="col-md-5">
                     <img src="habitacion_<?= $habitacion['id'] ?>.jpg"
                          alt="Imagen habitación"
                          class="img-fluid rounded shadow">
                 </div>
 
-                <!-- Texto -->
                 <div class="col-md-7">
                     <p><?= nl2br(htmlspecialchars($habitacion['descripcion'])) ?></p>
                     <p><strong>Capacidad:</strong> <?= $habitacion['capacidad'] ?> personas</p>
@@ -93,7 +90,7 @@ $servicios = $conn->query("SELECT * FROM servicios");
                         </label>
                     </div>
                 <?php endwhile; ?>
-            </div>
+  3          </div>
 
             <button class="btn btn-primary">Continuar al pago</button>
             <a href="index.php" class="btn btn-secondary">Cancelar</a>

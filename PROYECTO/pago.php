@@ -81,7 +81,7 @@ foreach ($servicios as $sid) {
             <input type="hidden" name="entrada" value="<?= htmlspecialchars($entrada) ?>">
             <input type="hidden" name="salida" value="<?= htmlspecialchars($salida) ?>">
             <input type="hidden" name="cliente" value="<?= htmlspecialchars($cliente) ?>">
-            <input type="hidden" name="correo" value="<?= htmlspecialchars($_POST['correo']) ?>">
+            <input type="hidden" name="correo" value="<?= htmlspecialchars($correo) ?>">
 
             <?php foreach($servicios as $sid): ?>
                 <input type="hidden" name="servicios[]" value="<?= (int)$sid ?>">
@@ -134,7 +134,7 @@ foreach ($servicios as $sid) {
 
             <div class="mb-3">
                 <label class="form-label">CVV</label>
-                <input type="password" name="cvv" class="form-control" maxlength="4" required>
+                <input type="password" name="cvv" class="form-control" maxlength="3" required>
             </div>
 
 
