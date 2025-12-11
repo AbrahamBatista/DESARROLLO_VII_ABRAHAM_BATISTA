@@ -31,14 +31,40 @@ $servicios = $conn->query("SELECT * FROM servicios");
 <div class="container">
     <h3 class="mb-3">Reservar: <?= htmlspecialchars($habitacion['nombre']) ?></h3>
 
-    <div class="card mb-3">
-        <div class="card-body">
-            <p><?= nl2br(htmlspecialchars($habitacion['descripcion'])) ?></p>
-            <p>Capacidad: <?= $habitacion['capacidad'] ?> personas</p>
-            <p>Precio por noche: $<?= $habitacion['precio'] ?></p>
-            <p>Desde <strong><?= htmlspecialchars($entrada) ?></strong> hasta <strong><?= htmlspecialchars($salida) ?></strong></p>
+    <div class="row mb-4">
+
+
+
+        <div class="col-md-12">
+            <div class="card mb-3">
+                <div class="card-body">
+
+                <div class="row align-items-center">
+
+                <!-- Imagen -->
+                <div class="col-md-5">
+                    <img src="habitacion_<?= $habitacion['id'] ?>.jpg"
+                         alt="Imagen habitación"
+                         class="img-fluid rounded shadow">
+                </div>
+
+                <!-- Texto -->
+                <div class="col-md-7">
+                    <p><?= nl2br(htmlspecialchars($habitacion['descripcion'])) ?></p>
+                    <p><strong>Capacidad:</strong> <?= $habitacion['capacidad'] ?> personas</p>
+                    <p><strong>Precio por noche:</strong> $<?= $habitacion['precio'] ?></p>
+                    <p>Desde <strong><?= htmlspecialchars($entrada) ?></strong> 
+                       hasta <strong><?= htmlspecialchars($salida) ?></strong></p>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
     </div>
+
+    </div>
+
 
     <form method="POST" action="pago.php" class="card">
         <div class="card-body">
@@ -55,7 +81,6 @@ $servicios = $conn->query("SELECT * FROM servicios");
                 <label class="form-label">Ingrese su correo de contacto</label>
                 <input type="email" name="correo" class="form-control" required>
             </div>
-
 
             <div class="mb-3">
                 <label class="form-label">Servicios adicionales</label><br>
@@ -75,5 +100,6 @@ $servicios = $conn->query("SELECT * FROM servicios");
         </div>
     </form>
 </div>
+
 </body>
 </html>

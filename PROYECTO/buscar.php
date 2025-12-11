@@ -68,7 +68,7 @@ $resultado = $conn->query($sql);
 
 <nav class="navbar navbar-dark bg-dark mb-4">
   <div class="container">
-    <a class="navbar-brand" href="index.php">Hotel El Monumental - Reservas Disponibles</a>
+    <a class="navbar-brand" href="index.php">Hotel El Monumental - Habitaciones Disponibles</a>
   </div>
 </nav>
 

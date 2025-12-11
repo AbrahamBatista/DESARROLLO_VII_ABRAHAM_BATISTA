@@ -29,7 +29,7 @@
 <body>
 <nav class="navbar navbar-dark bg-dark mb-4">
   <div class="container">
-    <a class="navbar-brand" href="index.php">Hotel El Monumental - Reservas</a>
+    <a class="navbar-brand" href="index.php">Hotel El Monumental </a>
     <a class="btn btn-outline-light btn-sm" href="admin/login.php">Panel Admin</a>
   </div>
 </nav>
