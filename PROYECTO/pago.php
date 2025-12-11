@@ -51,7 +51,7 @@ foreach ($servicios as $sid) {
 </nav>
 
 <div class="container">
-    <h3 class="mb-3">Verificar reserva</h3>
+    <h3 class="mb-3">Verificar</h3>
 
     <div class="card mb-3">
         <div class="card-header">Resumen de la reserva</div>
@@ -145,3 +145,5 @@ foreach ($servicios as $sid) {
 </div>
 </body>
 </html>
+ 
+hola 
