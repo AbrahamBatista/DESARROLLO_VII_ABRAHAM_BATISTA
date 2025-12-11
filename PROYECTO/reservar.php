@@ -90,7 +90,7 @@ $servicios = $conn->query("SELECT * FROM servicios");
                         </label>
                     </div>
                 <?php endwhile; ?>
-  3          </div>
+           </div>
 
             <button class="btn btn-primary">Continuar al pago</button>
             <a href="index.php" class="btn btn-secondary">Cancelar</a>

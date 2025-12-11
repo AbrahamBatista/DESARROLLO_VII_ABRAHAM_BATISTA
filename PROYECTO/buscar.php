@@ -10,6 +10,52 @@ if ($entrada == "" || $salida == "" || $personas == "") {
     exit;
 }
 
+$hoy = date('Y-m-d');
+
+if ($entrada < $hoy || $salida <= $entrada) {
+    ?>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fechas inválidas</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+                background-image: url('habi.jpg'); 
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+            h3, p {
+                color: white;
+                text-shadow: 2px 2px 5px black;
+            }
+        </style>
+    </head>
+    <body>
+    <nav class="navbar navbar-dark bg-dark mb-4">
+      <div class="container">
+        <a class="navbar-brand" href="index.php">Hotel El Monumental - Habitaciones Disponibles</a>
+      </div>
+    </nav>
+
+    <div class="container">
+        <h3 class="mb-3">Fechas inválidas</h3>
+        <div class="alert alert-danger">
+            Las fechas seleccionadas no son válidas.<br>
+            • La fecha de entrada no puede ser anterior a hoy.<br>
+            • La fecha de salida debe ser mayor que la fecha de entrada.
+        </div>
+        <a href="index.php" class="btn btn-primary">Volver</a>
+    </div>
+    </body>
+    </html>
+    <?php
+    exit;
+}
+
 $entrada_esc = $conn->real_escape_string($entrada);
 $salida_esc = $conn->real_escape_string($salida);
 $personas_int = (int)$personas;
@@ -50,16 +96,15 @@ $resultado = $conn->query($sql);
         }
 
         .detalle-habitacion {
-            color: #2c3e50;        
-            font-weight: 600;      
-            font-size: 15px;       
-            text-shadow: none;     
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 15px;
+            text-shadow: none;
         }
 
-        
         .card-img-top {
-            height: 180px;       
-            object-fit: cover;    
+            height: 180px;
+            object-fit: cover;
         }
     </style>
 
@@ -86,14 +131,11 @@ $resultado = $conn->query($sql);
             <?php while($h = $resultado->fetch_assoc()): ?>
                 <div class="col-md-4">
                     <div class="card mb-3">
-
-                   
                         <img 
                             src="habitacion_<?= $h['id'] ?>.jpg" 
                             class="card-img-top" 
                             alt="Imagen de <?= htmlspecialchars($h['nombre']) ?>"
                         >
-
                         <div class="card-body">
                             <h5 class="card-title"><?= htmlspecialchars($h['nombre']) ?></h5>
                             <p class="card-text detalle-habitacion"><?= nl2br(htmlspecialchars($h['descripcion'])) ?></p>
